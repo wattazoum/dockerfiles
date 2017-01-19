@@ -30,7 +30,7 @@ RUN echo "deb http://packages.dotdeb.org jessie all" >> /etc/apt/sources.list.d/
   a2enmod rewrite
 
 # Fix phppgadmin
-COPY ./phppgadmin.conf /etc/apache2/conf.d/phppgadmin
+COPY ./phppgadmin.conf /etc/apache2/conf-available/phppgadmin.conf
 COPY ./config.inc.php /usr/share/phppgadmin/conf/config.inc.php
 RUN sed -i 's/variables_order = "GPCS"/variables_order = "EGPCS"/g' /etc/php5/apache2/php.ini
 
